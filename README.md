@@ -7,11 +7,11 @@ Install MongoDB on Centos/Red Hat 7 with ansible and replace Firewalld with Ipta
 
 ## Usage
 
-- Tune your own deployement with variables
-* `mongod_port, open mongod port with Iptables`
-* `dbpath, data folder for mongoDB server`
+1. Tune your own deployement with variables
+11. `mongod_port, open mongod port with Iptables`
+12. `dbpath, data folder for mongoDB server`
 
-- Launch playbook
-* `ansible-playbook -i hosts site.yml`
+2. Launch playbook
+21. `ansible-playbook -i hosts site.yml`
 
-- Take a break, a coffee maybe :)
+3. Take a break, a coffee maybe :)
