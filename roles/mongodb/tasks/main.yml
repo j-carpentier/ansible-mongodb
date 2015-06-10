@@ -1,5 +1,5 @@
 ---
-- name: add 10gen repo file
+- name: add mongo-10gen repo file
   template: src=repo.j2 dest=/etc/yum.repos.d/mongo-10gen.repo
   tags: mongodb
 
