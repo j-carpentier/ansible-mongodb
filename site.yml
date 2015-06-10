@@ -1,0 +1,13 @@
+---
+# This playbook deploys a simple MongoDB server. 
+
+- hosts: mongodb-servers 
+  user: root
+
+  vars:
+    dbpath: /var/lib/mongo
+    mongod_port: 27017
+
+  roles:
+    - iptables
+    - mongodb
