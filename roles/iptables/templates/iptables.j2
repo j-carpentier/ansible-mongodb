@@ -4,11 +4,16 @@
 :INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
--A INPUT -p tcp  --dport {{mongod_port}} -j  ACCEPT
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
--A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -p tcp  --dport 26 -j ACCEPT
+-A INPUT -p udp --sport 111 -j ACCEPT
+-A INPUT -p udp --sport 123 -j ACCEPT
+-A INPUT -p tcp  --dport {{mongod_port}} -j  ACCEPT
+-A INPUT -j LOG 
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
+
