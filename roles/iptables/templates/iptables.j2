@@ -12,7 +12,6 @@
 -A INPUT -p udp --sport 111 -j ACCEPT
 -A INPUT -p udp --sport 123 -j ACCEPT
 -A INPUT -p tcp  --dport {{mongod_port}} -j  ACCEPT
--A INPUT -j LOG 
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
 -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 COMMIT
